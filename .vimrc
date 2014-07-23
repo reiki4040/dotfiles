@@ -41,6 +41,9 @@ set incsearch "検索フレーズに部分マッチしている部分を表示�
 set hlsearch "マッチするすべを強調表示する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 
+"un highlight searchstring
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 """""""" neocomplate
 if neobundle#is_installed('neocomplete')
     " neocomplete用設定
@@ -76,7 +79,7 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gt <Plug>(go-test)
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>gd <Plug>(go-def)
+au FileType go nmap <leader>de <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
