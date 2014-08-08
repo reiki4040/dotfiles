@@ -1,4 +1,4 @@
-" refs http://catcher-in-the-tech.net/1063/
+" Neobundle refs http://catcher-in-the-tech.net/1063/
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -40,6 +40,8 @@ set ignorecase "大文字/小文字の区別なく検索する
 set incsearch "検索フレーズに部分マッチしている部分を表示する
 set hlsearch "マッチするすべを強調表示する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
+set history=100 "履歴を100個まで残す
+
 
 "un highlight searchstring
 nnoremap <ESC><ESC> :nohlsearch<CR>
