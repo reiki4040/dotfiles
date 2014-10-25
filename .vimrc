@@ -29,6 +29,10 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
+
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
+
 syntax on
 
 "set number "行番号を表示
@@ -60,7 +64,7 @@ if neobundle#is_installed('neocomplete')
 endif
 
 """""""" golang
-exe "set runtimepath+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 
 if !exists('g:neocomplete#omni_patterns')
     let g:neocomplete#omni_patterns = {}
@@ -81,8 +85,3 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gt <Plug>(go-test)
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>de <Plug>(go-def)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gl :GoLint<CR>
