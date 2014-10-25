@@ -27,3 +27,14 @@ export EDITOR="/usr/bin/vim"
 if [ -s ~/.tmuxinator/scripts/tmuxinator ]; then
   . ~/.tmuxinator/scripts/tmuxinator
 fi
+
+# tmux
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+
+if [ -f ~/dotfiles/.http_status ]; then
+  . ~/dotfiles/.http_status
+fi
