@@ -16,10 +16,16 @@ NeoBundle 'Shougo/neocomplete'
 
 NeoBundle 'fatih/vim-go'
 
+" NERDTree Directory viewer
+NeoBundle 'scrooloose/nerdtree'
+
 call neobundle#end()
 
 " Required:
 filetype plugin indent on
+
+" NERDTree shortcut
+:command! Dir :NERDTree
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
