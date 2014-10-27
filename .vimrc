@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'fatih/vim-go'
 
@@ -26,6 +27,25 @@ filetype plugin indent on
 
 " NERDTree shortcut
 :command! Dir :NERDTree
+
+" neosnippet ------------------------------------
+" <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+" imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
@@ -107,6 +127,7 @@ let g:go_fmt_fail_silently = 1
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "gofmt"
 let g:go_disable_autoinstall = 1
+let g:go_snippet_engine = "neosnippet"
 
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
