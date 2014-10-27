@@ -13,8 +13,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'majutsushi/tagbar'
 
+NeoBundle 'dgryski/vim-godef'
 NeoBundle 'fatih/vim-go'
 
 " NERDTree Directory viewer
@@ -27,6 +30,7 @@ filetype plugin indent on
 
 " NERDTree shortcut
 :command! Dir :NERDTree
+:command! Tag :TagbarToggle
 
 " neosnippet ------------------------------------
 " <TAB>: completion.
@@ -135,3 +139,4 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gt <Plug>(go-test)
 au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
