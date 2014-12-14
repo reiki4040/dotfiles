@@ -5,6 +5,7 @@ alias la='ls -lA'
 alias ..='cd ..'
 alias grep='grep --color'
 alias vi='vim'
+alias difff='diff -U 0 -N'
 
 # git completion
 test -f ~/.git-prompt.sh && . ~/.git-prompt.sh
