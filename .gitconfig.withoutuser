@@ -1,0 +1,21 @@
+[core]
+	autocrlf = false
+	editor = vim
+
+[color]
+	ui = auto
+
+[alias]
+	s = status
+	sw = switch
+	c = commit
+	cam = commit --amend
+	camreset = reset --soft HEAD@{1}
+	cob = checkout -b
+	b = branch
+	sma = switch master
+	a = add
+	au = add -u
+	d = diff
+	l = log
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
