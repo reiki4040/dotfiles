@@ -6,14 +6,15 @@
 	ui = auto
 
 [alias]
-	s = status
+	st = status
 	sw = switch
-	c = commit
-	cam = commit --amend
+	ci = commit
+	ciam = commit --amend
 	camreset = reset --soft HEAD@{1}
 	cob = checkout -b
-	b = branch
-	sma = switch master
+	br = branch
+	swma = switch master
+	coma = switch master
 	a = add
 	au = add -u
 	d = diff
