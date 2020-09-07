@@ -31,11 +31,17 @@ set hlsearch "マッチするすべを強調表示する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set history=100 "履歴を100個まで残す
 
-
 "un highlight searchstring
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " insert mode でjkでesc
 inoremap jk <Esc>
 
+" ideavim settings
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
 
